@@ -135,7 +135,7 @@ def list_front(exp_name: str):
     for i in np.argsort(-objectives[:, 1]):
         obj  = objectives[i]
         safe = "safe"   if obj[1] >= -1  else ("moderate" if obj[1] >= -5 else "risky")
-        fast = "fast"   if obj[0] > 200  else ("medium"   if obj[0] > 100 else "slow")
+        fast = "fast"   if obj[0] > 17   else ("medium"   if obj[0] > 8   else "slow")
         print(f"  {i:4d}  {obj[0]:8.2f}  {obj[1]:8.2f}  {obj[2]:8.2f}  {safe} + {fast}")
     print()
     print("  safety: 0 = no crash ever, -10 = crashed every episode")
